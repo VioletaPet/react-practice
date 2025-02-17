@@ -4,11 +4,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
+  background: #501E64;
   color: #f3f4f6;
 }
 
 @layer utilities {
+  /* keyframes are like snapshots of an animation that define what the element looks like at certain percentages during the animation process*/
+
   @keyframes blink {
     0%, 100% {
       opacity: 1;

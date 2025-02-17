@@ -1,3 +1,5 @@
+// A SEPARATE COMPONENT CALLED IN THE APP.JSX
+
 import { useEffect, useState } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
