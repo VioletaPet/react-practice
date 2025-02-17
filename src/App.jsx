@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './App.css';
+import './index.css'
 import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
-import './index.css'
+import { MobileMenu } from './components/MobileMenu';
 
 function App() {
   // code to clear up text once it's done loading
@@ -21,7 +22,11 @@ function App() {
       {/* div with all content after the loading screen, navbar, etc */}
       {/* inject JavaScript in className -> Boolean whether isLoaded is true */}
       <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-#501E64 text-gray-100`}>
-        <Navbar/>
+
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+
       </div>
     </>
   );
