@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-export const LoadingScreen = () => {
+export const LoadingScreen = ({ onComplete }) => {
 
   // keeps track of length of txt displayed in screen
   // useState hook tracks state in a function component
   // left value (text) = current state, right value (setText) = function that is used to update the state
   const [text, setText] = useState("");
-  const fullText = "< Hello World />";
+  const fullText = "Hello there!";
 
   // useEffect hook that runs code after component is rendered
   useEffect(() => {
@@ -23,13 +23,17 @@ export const LoadingScreen = () => {
       // once text is full, index is higher then fulltext, the interval should be cleared
       if (index > fullText.length) {
         clearInterval(interval)
+
+        setTimeout(() => {
+          onComplete();
+        }, 1000);
       }
     }, 100);
 
     // stops interval when component is no longer displayed
     // setInterval keeps running code every 100ms forever, unless its stopped
     return () => clearInterval(interval)
-  });
+  }, [onComplete]);
 
   return (
     <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
