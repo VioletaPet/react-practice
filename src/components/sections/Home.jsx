@@ -1,5 +1,4 @@
 
-
 export const Home = () => {
   return (
     <section
@@ -12,10 +11,11 @@ export const Home = () => {
         </h1>
 
         <p className="text-gray-200 text-lg mb-8 max-w-lg mx-auto">
-          Hi, I'm a junior full-stack developer who loves building the bridge between well performing backend code and intuitive frontend design to make seamless, user-focused applications come to life
+          Junior full-stack developer that brings a unique resourcefulness from a diverse background including project management and leadership
         </p>
 
         <div className="flex justify-center space-x-4">
+          {/* MAKE BUTTONS LIKE MINE */}
           <a
             href="#projects"
             className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.4)]"

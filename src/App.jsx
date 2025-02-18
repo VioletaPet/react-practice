@@ -5,6 +5,11 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
 import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/sections/Home';
+import { About } from './components/sections/About';
+import { Skills } from './components/sections/Skills';
+import { SoftSkills } from './components/sections/SoftSkills';
+import { Projects } from './components/sections/Projects';
+
 
 function App() {
   // code to clear up text once it's done loading
@@ -27,7 +32,11 @@ function App() {
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <Home />
+        <Home/>
+        <About/>
+        <Skills/>
+        <SoftSkills/>
+        <Projects/>
       </div>
     </>
   );
