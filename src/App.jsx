@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './index.css'
+
+// imports components
 import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
 import { MobileMenu } from './components/MobileMenu';
@@ -9,6 +12,11 @@ import { About } from './components/sections/About';
 import { Skills } from './components/sections/Skills';
 import { SoftSkills } from './components/sections/SoftSkills';
 import { Projects } from './components/sections/Projects';
+import { Certificates } from './components/sections/Certificates';
+import { Contact } from './components/sections/Contact';
+
+// importing separate project page components
+import { StreamCaddy } from './components/projectPages/StreamCaddy';
 
 
 function App() {
@@ -27,17 +35,28 @@ function App() {
 
       {/* div with all content after the loading screen, navbar, etc */}
       {/* inject JavaScript in className -> Boolean whether isLoaded is true */}
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-#501E64 text-gray-100`}>
+      <Router>
+        <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} bg-#501E64 text-gray-100`}>
 
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <Home/>
-        <About/>
-        <Skills/>
-        <SoftSkills/>
-        <Projects/>
-      </div>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Home />
+                <About />
+                <Skills />
+                <SoftSkills />
+                <Projects />
+                <Certificates />
+                <Contact />
+              </>
+            } />
+            <Route path="/projectPages/StreamCaddy" element={<StreamCaddy />}/>
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
