@@ -1,7 +1,28 @@
+import { useState, useEffect } from "react";
 import { RevealEffect } from "../RevealEffect";
 import Photo from "../../assets/Photo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+
 
 export const Home = () => {
+
+  const [showArrow, setShowArrow] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setShowArrow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    };
+  }, []);
+
 
   const handleNavigation = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -51,6 +72,12 @@ export const Home = () => {
           </div>
         </div>
       </RevealEffect>
+
+      {showArrow && (
+        <div className="absolute bottom-10 text-center transform translate-x-0.5 animate-bounce transition-all ease-out">
+          <FontAwesomeIcon icon={faArrowDown} className='text-3xl text-gray-400' />
+        </div>
+      )}
     </section>
   );
 };
