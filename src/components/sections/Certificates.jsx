@@ -48,7 +48,10 @@ export const Certificates = () => {
 
 
   return (
-    <section id="certifications" className="relative w-full max-w-4xl mx-auto my-14 px-14 md:px-16">
+    <section
+      id="certifications"
+      className="min-h-screen flex items-center justify-center px-6 max-w-3xl mx-auto md:px-16"
+    >
       <div className="relative h-[400px] w-full">
         <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent text-center">
           Certificates
@@ -61,7 +64,7 @@ export const Certificates = () => {
                 currentSlide === index ? "opacity-100" : "opacity-0"
               }`}
             >
-              <div className="bg-white shadow-lg rounded-lg p-8 md:p-6 mx-auto w-full h-[250px] flex flex-col items-center justify-center gap-4">
+              <div className="bg-white shadow-lg rounded-lg p-8 md:p-6 mx-auto w-full h-[250px] flex flex-col items-center justify-center gap-4 mb-12">
                 <img
                   src={cert.logo}
                   alt={cert.alt}
@@ -85,14 +88,14 @@ export const Certificates = () => {
           onClick={prevSlide}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-14"
         >
-          <ChevronLeft className="w-8 h-8 text-gray-700" />
+          <ChevronLeft className="w-8 h-8 text-gray-700 hover:text-blue-500 transition-colors cursor-pointer" />
           <span className="sr-only">Previous</span>
         </button>
         <button
           onClick={nextSlide}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-14"
         >
-          <ChevronRight className="w-8 h-8 text-gray-700" />
+          <ChevronRight className="w-8 h-8 text-gray-700 hover:text-blue-500 transition-colors cursor-pointer" />
           <span className="sr-only">Next</span>
         </button>
 
