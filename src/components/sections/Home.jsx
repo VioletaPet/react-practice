@@ -32,7 +32,7 @@ export const Home = () => {
   };
 
   const handleCVDownload = () => {
-    window.open('/LibbeyDownloadLink.pdf', '_blank');
+    window.open('/Resume_Petkovic_Violeta.pdf', '_blank');
   }
 
   return (
