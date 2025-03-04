@@ -54,7 +54,7 @@ export const Certificates = () => {
     >
       <div className="relative h-[400px] w-full">
         <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent text-center">
-          Certificates
+          Certifications
         </h2>
         <div className="relative h-full flex items-center">
           {certificates.map((cert, index) => (
